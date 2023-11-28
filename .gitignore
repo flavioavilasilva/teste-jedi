@@ -1,0 +1,53 @@
+# Ignorar arquivos temporários e logs
+*.swp
+*.log
+
+# Ignorar diretórios específicos
+/log/
+/tmp/
+/public/system/
+/public/uploads/
+
+# Ignorar arquivos de configuração local
+/config/database.yml
+/config/application.yml
+
+# Ignorar arquivos de dependências
+/vendor/
+/node_modules/
+
+# Ignorar arquivos de ambiente
+/.env
+/.env.*
+
+# Ignorar arquivos de compilação
+/public/assets/
+/public/packs/
+/public/packs-test/
+
+# Ignorar arquivos de banco de dados
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignorar arquivos de cache
+/tmp/cache/
+/tmp/pids/
+/tmp/sockets/
+
+# Ignorar arquivos de imagem
+*.gif
+*.jpg
+*.jpeg
+*.png
+
+# Ignorar arquivos de backup
+*.bak
+*.backup
+*.swp
+
+# Ignorar arquivos de configuração de IDEs
+.idea/
+.vscode/
+
+# Ignorar arquivos de build
+/build/
