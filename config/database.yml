@@ -1,0 +1,27 @@
+# default: &default
+  # adapter: postgresql
+  # encoding: unicode
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: password
+  pool: 5
+
+
+development:
+  <<: *default
+  database: jedis_development
+
+test:
+  <<: *default
+  database: jedis_test
+
+production:
+  <<: *default
+  database: jedis_production
+  username: jedis
+  password: <%= ENV['JEDIS_DATABASE_PASSWORD'] %>
