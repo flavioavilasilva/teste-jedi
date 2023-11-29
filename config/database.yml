@@ -1,12 +1,7 @@
-# default: &default
-  # adapter: postgresql
-  # encoding: unicode
-  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
+  host: postgres_db
   username: postgres
   password: password
   pool: 5
