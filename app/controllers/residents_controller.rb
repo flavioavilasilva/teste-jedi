@@ -2,14 +2,7 @@ class ResidentsController < ApplicationController
   before_action :set_resident, only: %i[show edit update destroy switch_status]
 
   def index
-    if params[:search].present?
-      @residents = Resident.joins(:address).where(
-        'lower(addresses.city) LIKE ? OR lower(addresses.state) = ? OR residents.full_name LIKE ?',
-        "%#{params[:search]}%".downcase, params[:search].downcase, "%#{params[:search]}%"
-      ).includes(:address)
-    else
-      @residents = Resident.includes(:address).all
-    end
+    @residents = ResidentList.new(params[:search]).call
   end
 
   def show; end
@@ -21,6 +14,7 @@ class ResidentsController < ApplicationController
 
   def create
     @resident = Resident.new(register_params)
+    
     if @resident.save
       redirect_to residents_path
     else
