@@ -1,0 +1,5 @@
+# TODO: A melhoria de UX/UI que eu faria no cadastro de municipes para diminuir navegação, 
+# seria criar um grid editável, ou seja, o usuário na mesma pagina que vê as informações, poderia editá-las. 
+# TODO: Colocar o rubocop para ter padrões definidos pela comunidade no projeto
+# TODO: Incluir hooks que executem o rubocop e rspec nos commits
+# TODO: Avaliar necessidade de aumentar cobertura de testes em partes criticas do sistema

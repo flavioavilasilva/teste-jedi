@@ -1,58 +1,57 @@
-Introdução (Backend):
+# APP-TESTE-JEDI
 
-Iremos fazer uma grande atualização e mudanças no nosso código. Por isso, é imprescindível que você saiba Ruby e Rails. Algumas apps nossas são legadas, monolíticas, mesmo no backend você irá precisar lidar com um pouco com frontend (mas fica tranquilo, te ajudaremos nisso).
-Tempo é fundamental para nós, porém, vamos focar na qualidade do seu trabalho, por isso, leve o tempo que achar necessário.
-Desafio:
+Este projeto é um desafio técnico para a empresa JEDI, onde foram solicitadas algumas novas implementações em um código já existente,sendo:
+- Implementação de busca na listagem de municipes, podendo ser filtrados por nome completo;
+- Refactorys foram feitos dentro do que era possível no tempo acordado. 
 
-Crie um CRUD de municipes (Exceto deletar). O municipe tem status ativo e inativo. Idealmente, só precisa ser 2 páginas: Listagem de CRUD (com opções para navegar), e o cadastro em si. 2 páginas é apenas uma sugestão, você é livre para montar o UI/UX da forma que achar melhor.
 
-Ter uma entidade relacionada chamada Munícipe. Essa entidade cadastra cidadãos (pessoas) dentro de um município. As seguintes regras devem ser seguidas:
-1.1 Dados do munícipe: `Nome completo, CPF, CNS(cartão nacional de saúde), Email, Data nascimento, Telefone (código do pais e ddd), Foto e status`.
+Topics:
+- Stack
+- Pontape inicial
+- Executando os testes com Rspec
+- Executar a aplicação local
+- Créditos
 
-1.2 Todos os dados do munícipe são obrigatórios;
+## Stack
+Ruby 2.7.2
+Rails 7.0.3
+Docker
 
-1.3 `CPF, CNS,Email` devem ser válidos;
+## Pontapé inicial
 
-1.4 Tenha atenção a data de nascimento. Valide os casos impossíveis/improváveis de serem válidos;
+Para criar a iamgem do projeto, baseado no docker-compose do projeto, execute
+```bash
+docker-compose build
+```
 
-1.5 Foto do munícipe deve ser tamanhos diferentes para servir vários casos.
+Crie o banco de dados da aplicação com
+```bash
+docker-compose run --rm web rails db:create
+```
 
-Ter uma entidade relacionada chamada Endereço. Essa entidade salva o endereço relacionado ao municipe. As seguintes regras devem ser seguidas:
-2.1 Campos: `CEP, Logradouro, complemento, bairro, cidade, UF e codigo IBGE`;
+Rode as migrates
+```bash
+docker-compose run --rm web rails db:migrate
+```
 
-2.2 Todos os dados são obrigatórios, exceto complemento e código IBGE;
+## Executando os testes com Rspec
 
-2.3 Em termos de MVC, existe apenas a Entidade relacional endereço. O restante é dispensável;
-Regras de negócio:
+Para executar os testes com o Rspec, basta executar o seguinte comando na raiz da aplicação:
 
-Após criar/atualizar um municipe, você deve mandar um Email e sms ao mesmo informando sobre o cadastro de suas informações e quando o seu status sofrer alteração; // TODO
-Filtrar municipes por dados dele e/ou de endereco. É livre a escolha do que deve ser feito. // TODO
-Dicas:
+```bash
+docker-compose run --rm web bundler exec rspec
+```
 
-UI/UX:
+## Executar a aplicação local
 
-É possível otimizar o tempo de cadastro do endereço a partir do UX.
-Você deve minimizar o máximo possível a navegação do usuário. Como você faria isso?
-Backend:
+```bash
+docker-compose up
+```
+Sua aplicação estará disponivel no host localhost:3000
 
-Pense que essas regras podem ser mudadas com uma frequência alta;
-Gostamos de otimização, setups e deploys são sempre automatizados (Docker?) // Done
-Não preciso dizer que você precisa testar a maioria dos arquivos, não é mesmo? // TODO
-Princípios e padrões de projetos são muito bem vindos e essenciais para Seniors;
-Reduzir o número de chamadas ao banco de dados é essencial.
-Tools:
+## Créditos
 
-Ruby, Ruby on Rails e Postgres são obrigatórios;
-Elasticsearch/Kafka (opcional, plus);
-Utilize ActionView, porém, AssetPipeline/Sprockets ou uma abordagem SPA junto ao rails;
-Critérios:
-
-TUDO, absolutamente TUDO, será olhado (sim, teremos carinho pelo seu tempo gasto e olharemos com destreza seu teste);
-Esse teste é backend, então, pesará muito como você realizou;
-Frontend é opcional para o seu caso, mas, irá contar muito positivo como você fará;
-Ver seu teste rodando em modo produção conta MUITO. Fica ao seu criterio se faz e em qual plataforma;
-Lembre-se que o melhor de um profissional é sua atitude quanto a resolução de problemas. Interprete esse item como desejar ;)
-
-Coloque o código em seu repositório no github e vamos baixar e analisar internamente, após a anãlise, vamos te dar o feedback.
-
-Teste Unitarios
+*Flavio Avila*<br>
+flavio.avila.silva@outlook.com<br>
+https://github.com/flavioavilasilva<br>
+https://www.linkedin.com/in/flavio-avila-7775702b/
