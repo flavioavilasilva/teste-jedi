@@ -1,8 +1,8 @@
 # APP-TESTE-JEDI
 
-Este projeto é um desafio técnico para a empresa JEDI, onde foram solicitadas algumas novas implementações em um código já existente,sendo:
+Este projeto é um desafio técnico para a empresa JEDI, onde foram solicitadas algumas novas implementações em um código já existente, sendo:
 - Implementação de busca na listagem de municipes, podendo ser filtrados por nome completo;
-- Refactorys foram feitos dentro do que era possível no tempo acordado. 
+- Refactorys foram feitos dentro do que era possível no tempo acordado (Melhoria em legibilidade de código, mais cenários de testes, dockerização ajustada...). 
 
 
 Topics:

@@ -1,5 +1,5 @@
 class ResidentsController < ApplicationController
-  before_action :set_resident, only: %i[show edit update destroy switch_status]
+  before_action :set_resident, only: %i[show edit update switch_status]
 
   def index
     @residents = ResidentList.new(params[:search]).call
