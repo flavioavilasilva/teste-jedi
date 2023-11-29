@@ -25,10 +25,10 @@ class Resident < ApplicationRecord
 
   def birth_date_valid?
     date_time = birth_date.to_datetime
-    year = date_time.year
+    year = date_time&.year
     actual_year = DateTime.now.year
-
-    return errors.add(:birth_date, 'Data de nascimento invalida') if year > actual_year || (actual_year - year) > 120
+    
+    return errors.add(:birth_date, 'Data de nascimento invalida') if year.to_i > actual_year || (actual_year - year.to_i) > 120
   end
 
   def send_welcome

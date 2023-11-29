@@ -19,7 +19,7 @@
   </tr>
     <% @residents.each do |resident| %>
     <% address = resident.address %>
-    <tr>
+    <tr class='resident_row'
       <td><%= resident.id %></td>
       <td><%= resident.full_name %></td>
       <td><%= "#{resident.cpf.first(3)}.***.***-#{resident.cpf.last(2)}"%></td>
